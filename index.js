@@ -6,7 +6,7 @@ const init = (connString, log = false) => {
 
     // NOTE Check dublicate
     if(cache.get('connString')){
-        debug && console.log("mysqlr log: new connection string", cache.get('connString'))
+        log && console.log("mysqlr log: new connection string", cache.get('connString'))
         cache.del('connString')
     }  
 
