@@ -9,7 +9,8 @@
   "keywords": [
     "mysql",
     "promiss",
-    "array"
+    "array",
+    "radis",
   ],
   "author": "stupid@arnob",
   "license": "ISC",
