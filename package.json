@@ -10,7 +10,7 @@
     "mysql",
     "promiss",
     "array",
-    "radis",
+    "radis"
   ],
   "author": "stupid@arnob",
   "license": "ISC",
