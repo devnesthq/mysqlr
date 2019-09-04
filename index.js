@@ -1,22 +1,26 @@
 const mysql = require('mysql');
-const redis = require("redis");
-const credis_client = redis.createClient();
+const cache = require('memory-cache');
+
  
 const init = (connString) => {
 
-    if(credis_client.get('connString')){
-        credis_client.del('connString')
+    if(cache.get('connString')){
+        cache.del('connString')
     }
 
-    credis_client.set('connString', connString)
+    cache.put('connString', connString)
     return mysql.createConnection(connString);
 }
 
 const query = (qry) => {
     return new Promise((resolve, reject) => {
-        if(credis_client.get('connString') === null){
+        if(cache.get('connString') === null){
             resolve('App Not Init')
         } else {
+            // let conn = cache.get('connString') 
+            
+            const connection = init(cache.get('connString'));
+
             connection.query(qry, function (error, results, fields) {
                 if (error) {
                     resolve({ message: 'Mysql Error', error: error})
