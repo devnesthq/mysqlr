@@ -1,0 +1,19 @@
+{
+  "name": "mysqlr",
+  "version": "1.0.0",
+  "description": "Easy package to mysql manage. Build on top of mysql",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mysql",
+    "promiss",
+    "array"
+  ],
+  "author": "stupid@arnob",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.17.1"
+  }
+}
