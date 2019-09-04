@@ -1,31 +1,33 @@
 const mysql = require('mysql');
 const cache = require('memory-cache');
 
- 
-const init = (connString) => {
+// NOTE State mysql at the start 
+const init = (connString, log = false) => {
 
+    // NOTE Check dublicate
     if(cache.get('connString')){
+        debug && console.log("mysqlr log: new connection string", cache.get('connString'))
         cache.del('connString')
-    }
+    }  
 
     cache.put('connString', connString)
     return mysql.createConnection(connString);
 }
 
+// NOTE Query of the mysql. Simple Query For fast Work
 const query = (qry) => {
     return new Promise((resolve, reject) => {
+        
         if(cache.get('connString') === null){
-            resolve('App Not Init')
+            resolve({error: 'No String Found', results: null})
         } else {
-            // let conn = cache.get('connString') 
             
             const connection = init(cache.get('connString'));
-
             connection.query(qry, function (error, results, fields) {
                 if (error) {
-                    resolve({ message: 'Mysql Error', error: error})
+                    resolve({error, results})
                 } else {
-                    resolve({message: 'Return Data', return: results})
+                    resolve({error, results})
                 } 
             });
         }
