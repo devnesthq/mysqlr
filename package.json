@@ -11,7 +11,6 @@
     "mysql",
     "promise",
     "array",
-    "radis"
   ],
   "author": "stupid@arnob",
   "license": "ISC",
