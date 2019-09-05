@@ -1,14 +1,15 @@
 {
   "name": "mysqlr",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Easy package to mysql manage. Build on top of mysql",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": "https://github.com/stupidArnob/mysqlr",
   "keywords": [
     "mysql",
-    "promiss",
+    "promise",
     "array",
     "radis"
   ],

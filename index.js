@@ -1,7 +1,14 @@
 const mysql = require('mysql');
 const cache = require('memory-cache');
 
+
+
 // NOTE State mysql at the start 
+/**
+ * This use memory for remember the connection string just define at the server config.
+ * @param {Object} connString this will receive the mysql connection string config.
+ * @param {*} log Just show the log of the connetion result.
+ */
 const init = (connString, log = false) => {
 
     // NOTE Check dublicate
@@ -14,7 +21,13 @@ const init = (connString, log = false) => {
     return mysql.createConnection(connString);
 }
 
+
+
 // NOTE Query of the mysql. Simple Query For fast Work
+/**
+ * This return only promise. Just give the query and get return the result.
+ * @param {*} qry Query String
+ */
 const query = (qry) => {
     return new Promise((resolve, reject) => {
         
