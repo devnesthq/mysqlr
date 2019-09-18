@@ -51,17 +51,34 @@ const query = (qry) => {
 // NOTE Query of the mysql. Simple Query For fast Work
 /**
  * This return only promise. It will entry bulk. Based on the key of array field and json data
- * @param {Array} field_name_array  Contain the field name array. 
- * @param {Array} data_json         Query String
+ * @param {JSON} json_data Query String
  */
-const bulkEntry = (field_name_array, data_json) => {
+const jsonInsert = (json_data) => {
     return new Promise((resolve, reject) => {
 
+        console.log("json_data", json_data); 
+        
+        let qry = 'INSERT INTO', keys = '';
+        Object.keys(json_data).forEach(key => {
+            keys = key
+            qry = qry + ' ' + key
+        }) 
+        qry = qry + ' SET ?' ;
+        
+        const connection = init(cache.get('connString'));
+        connection.query(qry, json_data[keys], function (error, results, fields) {
+            if (error) {
+                resolve({error, results})
+            } else {
+                resolve({error, results})
+            } 
+        })
     })
 }
 
 
 module.exports = {
     init: init,
-    query: query
+    query: query,
+    jsonInsert: jsonInsert
 }

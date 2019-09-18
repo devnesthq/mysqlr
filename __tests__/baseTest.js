@@ -50,3 +50,12 @@ describe("Testing The Query", () => {
         expect(basic_1.error).toEqual(null);
     })
 })
+
+
+describe("Testing The JSON Insert", () => {
+    
+    test('JSON insert Basic', async () => {
+        let basic_1 = await mysqlr.jsonInsert({ test1: { t1: 'Hello', t4: 'Hello' }})
+        expect(basic_1.error).toEqual(null);
+    })
+})
