@@ -33,6 +33,10 @@ Simple right !!!
 
 #### Supporse u had a table like this
 
+#### Database Name mysqlrTesting
+
+#### Table name: test1
+
 |T1|T2|T3|T4|
 |--|--|--|--|
 |At|g2|z3|t4|
