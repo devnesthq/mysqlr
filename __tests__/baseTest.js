@@ -18,7 +18,7 @@ describe("Testing The import", () => {
             host: "localhost",
             user: "root",
             password: "mysql",
-            database: "exam_finalize_for_67"
+            database: "mysqlrTesting"
         })
         let check_cache =  cache.get('connString')
         expect(check_cache).not.toEqual(null)
