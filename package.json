@@ -1,12 +1,12 @@
 {
   "name": "mysqlr",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "This package will easy your task with mysql.",
   "main": "index.js",
   "scripts": {
     "test": "jest"
   },
-  "repository": "https://github.com/stupidArnob/mysqlr",
+  "repository": "https://github.com/devnesthq/mysqlr.git",
   "keywords": [
     "mysql",
     "promise",
