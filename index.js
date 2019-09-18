@@ -47,6 +47,20 @@ const query = (qry) => {
     })
 }
 
+
+// NOTE Query of the mysql. Simple Query For fast Work
+/**
+ * This return only promise. It will entry bulk. Based on the key of array field and json data
+ * @param {Array} field_name_array  Contain the field name array. 
+ * @param {Array} data_json         Query String
+ */
+const bulkEntry = (field_name_array, data_json) => {
+    return new Promise((resolve, reject) => {
+
+    })
+}
+
+
 module.exports = {
     init: init,
     query: query
