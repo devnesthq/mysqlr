@@ -1,10 +1,10 @@
 {
   "name": "mysqlr",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "This package will easy your task with mysql.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --detectOpenHandles"
+    "test": "jest"
   },
   "repository": "https://github.com/stupidArnob/mysqlr",
   "keywords": [

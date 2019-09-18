@@ -12,7 +12,6 @@ const cache = require('memory-cache');
  */
 
 
-
 describe("Testing The import", () => {
     test('Testing Import From Memory, the config store there or not', async () => {
         mysqlr.init({
@@ -50,5 +49,4 @@ describe("Testing The Query", () => {
         let basic_1 = await mysqlr.query('SELECT * FROM test1')
         expect(basic_1.error).toEqual(null);
     })
-
 })

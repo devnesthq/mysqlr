@@ -1,3 +1,4 @@
 {
-    "jest.pathToJest": "jest"
+    "jest.pathToJest": "jest",
+    "jest.showCoverageOnLoad": true
 }
