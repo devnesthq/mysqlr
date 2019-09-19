@@ -35,24 +35,46 @@ Simple right !!!
 
 #### Database Name mysqlrTesting
 
-#### Table name: test1
+#### Table name: table_1
 
-|T1|T2|T3|T4|
-|--|--|--|--|
-|At|g2|z3|t4|
-|Ae|s2|a3|y4|
-|A4|a2|s3|u4|
-|At|22|A3|i4|
-|Ay|q2|g3|o4|
+|column_1|column_2|column_3|column_3|
+|--------|--------|--------|--------|
+|Data_1  |Data_2  |Data_3  |Data_4  |
+|Data_1  |Data_2  |Data_3  |Data_4  |
+|Data_1  |Data_2  |Data_3  |Data_4  |
 
-## Select Query 
+#### Table name: table_2
+
+|column_1|column_2|column_3|column_3|
+|--------|--------|--------|--------|
+|Data_1  |Data_2  |Data_3  |Data_4  |
+|Data_1  |Data_2  |Data_3  |Data_4  |
+|Data_1  |Data_2  |Data_3  |Data_4  |
+
+#### Table name: table_3
+
+|column_1|column_2|column_3|column_3|
+|--------|--------|--------|--------|
+|Data_1  |Data_2  |Data_3  |Data_4  |
+|Data_1  |Data_2  |Data_3  |Data_4  |
+|Data_1  |Data_2  |Data_3  |Data_4  |
+
+#### Table name: table_4
+
+|column_1|column_2|column_3|column_3|
+|--------|--------|--------|--------|
+|Data_1  |Data_2  |Data_3  |Data_4  |
+|Data_1  |Data_2  |Data_3  |Data_4  |
+|Data_1  |Data_2  |Data_3  |Data_4  |
+
+## Select Query
 
 Then the query like be
 
 Promise based so just give the query and then what you wanted to do
 
 ```
-mysqlr.query('SELECT * FROM test1').then(response => {
+mysqlr.query('SELECT * FROM table_1').then(response => {
     consle.log(response)
 })
 ```
@@ -60,7 +82,7 @@ mysqlr.query('SELECT * FROM test1').then(response => {
 For async/await
 
 ```
-let qry = await mysqlr.query('SELECT * FROM test1')
+let qry = await mysqlr.query('SELECT * FROM table_1')
 ```
 
 Those are bouth same. So now it your choice. 
@@ -73,24 +95,24 @@ Suppose you have a json like
 
 ```
 {
-    test1:
+    table_1:
     {
-        t1: 'Hello',
-        t4: 'Hello'
+        column_1: 'Hello',
+        column_4: 'Hello'
     }
 }
 ```
 
-Now you wanted insert to the db. You already checked that test1 is the table name. And next is the property and values.
+Now you wanted insert to the db. You already checked that table_1 is the table name. And next is the property and values.
 
 So now just use the jsonInsert. Like
 
 ```
     const data = {
-                    test1:
+                    table_1:
                     {
-                        t1: 'Hello',
-                        t4: 'Hello'
+                        column_1: 'Hello',
+                        column_4: 'Hello'
                     }
                 }
     mysqlr.jsonInsert(data).then(response => console.log(response))
