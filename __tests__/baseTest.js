@@ -78,7 +78,8 @@ describe("Testing The JSON Insert", () => {
 
 
 
-describe.skip("Testing data delete", () => {
+describe("Testing data delete", () => {
+
     test('Delete Table 1', async () => {
         let basic_1 = await mysqlr.clean('table_1')
         expect(basic_1.error).toEqual(null);
