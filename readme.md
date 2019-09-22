@@ -120,6 +120,14 @@ So now just use the jsonInsert. Like
 
 You are done. The Data will be insert to the database. No Need to take any worried. Its worked like sequelize. But in the behide it worked using normal mysql lib.
 
+## Clean table data
+
+
+
+```
+let basic_1 = await mysqlr.clean('table_1')
+```
+
 
 ## Sample Code 1
 
