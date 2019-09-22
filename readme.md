@@ -120,6 +120,53 @@ So now just use the jsonInsert. Like
 
 You are done. The Data will be insert to the database. No Need to take any worried. Its worked like sequelize. But in the behide it worked using normal mysql lib.
 
+
+## Sample Code 1
+
+mysqlr init will use memory to remember the config. so no needed to init every time. Just init it at the start of the code.
+
+```
+const mysqlr = require('mysqlr');
+
+mysqlr.init({
+    host: "localhost",
+    user: "root",
+    password: "mysql",
+    database: "mysqlrTesting"
+})
+
+mysqlr.query('SELECT * FROM table_1').then(response => {
+    consle.log(response)
+})
+```
+
+## Sample Code 2
+
+filename: start.js
+```
+const mysqlr = require('mysqlr');
+
+mysqlr.init({
+    host: "localhost",
+    user: "root",
+    password: "mysql",
+    database: "mysqlrTesting"
+})
+
+..... other codes
+```
+
+filename: searchQuery.js
+```
+const mysqlr = require('mysqlr');
+
+mysqlr.query('SELECT * FROM table_1').then(response => {
+    consle.log(response)
+})
+```
+
+Simple :D
+
 <br/><br/><br/>
 
-# More Coming. We are still Developing. Hope the will be AWESOME in the END 
+# More Coming. We are still Developing. Hope it will be AWESOME in the END 
