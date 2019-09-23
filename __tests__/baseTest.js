@@ -77,8 +77,16 @@ describe("Testing The JSON Insert", () => {
 })
 
 
+describe("Testing Spacific Item Delete", () => {
+    test('Delete single1 from column_1 at Table 3', async () => {
+        let basic_3_delete = await mysqlr.cleanByItem('table_3', 'column_1', "single1")
+        expect(basic_3_delete.results.affectedRows).toBeGreaterThanOrEqual(1);
+    })
+})
 
-describe("Testing data delete", () => {
+
+
+describe.skip("Testing data delete", () => {
 
     test('Delete Table 1', async () => {
         let basic_1 = await mysqlr.clean('table_1')

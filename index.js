@@ -139,6 +139,8 @@ const arrayInsertSelectTableBulk = (table_name, json_array_data) => {
  * 
  * @param {String} table_name Clean all the record.
  */
+
+// NOTE Clean all data from table
 const clean = (table_name) => {
     return new Promise((resolve, reject) => {
 
@@ -155,6 +157,29 @@ const clean = (table_name) => {
     })
 }
 
+/**
+ * 
+ * @param {String} table_name Clean all the record.
+ */
+// Clean Spacific item from the table colume
+const cleanByItem = (table_name, col_name, item_name) => {
+    return new Promise((resolve, reject) => {
+
+        let qry = `DELETE FROM ${table_name} WHERE ${col_name} = "${item_name}"`;
+
+        const connection = init(cache.get('connString'));
+        connection.query(qry, function (error, results, fields) {
+            if (error) {
+                resolve({error: 'Data Not Deleted', results})
+            } else {
+                resolve({error: null, results})
+            } 
+        })
+    })
+}
+
+
+
 
 module.exports = {
     init                    : init,
@@ -163,4 +188,5 @@ module.exports = {
     insertSingleTable       : jsonInsertSelectTable,
     bulkInsertSingleTable   : arrayInsertSelectTableBulk,
     clean                   : clean,
+    cleanByItem             : cleanByItem,
 }

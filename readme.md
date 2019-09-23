@@ -122,12 +122,21 @@ You are done. The Data will be insert to the database. No Need to take any worri
 
 ## Clean table data
 
-
+Clean all data from a table
 
 ```
 let basic_1 = await mysqlr.clean('table_1')
 ```
 
+Remove Specific data/item from table
+
+Here peramitter are
+
+mysqlr.cleanByItem(table_name, colume name, item name)
+
+```
+let basic_1 = await mysqlr.cleanByItem('table_3', 'column_1', "single1")
+```
 
 ## Sample Code 1
 
