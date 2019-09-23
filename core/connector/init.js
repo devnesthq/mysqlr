@@ -9,7 +9,7 @@ const cache = require('memory-cache');
  * @param {Object} connString this will receive the mysql connection string config.
  * @param {*} log Just show the log of the connetion result.
  */
-module.exports = (connString, log = false) => {
+exports.connect = (connString, log = false) => {
 
     // NOTE Check dublicate
     if(cache.get('connString')){
@@ -19,4 +19,11 @@ module.exports = (connString, log = false) => {
 
     cache.put('connString', connString)
     return mysql.createConnection(connString);
+}
+
+
+exports.disconnect = (cb, log = false) => {
+    let connString = cache.get('connString')
+    cache.del('connString')
+    return  this.connect(connString).end(cb);
 }

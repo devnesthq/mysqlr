@@ -1,5 +1,6 @@
 const cache = require('memory-cache');
-const init = require('../init/init')
+const init = require('../connector/init').connect
+const disconnect = require('../connector/init').disconnect
 
 
 // ANCHOR jsonInsert
@@ -19,10 +20,13 @@ exports.jsonInsert = (json_data) => {
         qry = qry + ' SET ?' ;
         
         const connection = init(cache.get('connString'));
+
         connection.query(qry, json_data[keys], function (error, results, fields) {
             if (error) {
+                disconnect()
                 resolve({error, results})
             } else {
+                disconnect()
                 resolve({error, results})
             } 
         })
@@ -46,8 +50,10 @@ exports.jsonInsertSelectTable = (table_name, json_data) => {
         const connection = init(cache.get('connString'));
         connection.query(qry, json_data, function (error, results, fields) {
             if (error) {
+                disconnect()
                 resolve({error, results})
             } else {
+                disconnect()
                 resolve({error, results})
             } 
         })
@@ -74,8 +80,10 @@ exports.arrayInsertSelectTableBulk = (table_name, json_array_data) => {
                     const connection = init(cache.get('connString'));
                     connection.query(qry, json_item, function (error, results, fields) {
                         if (error) {
+                            disconnect()
                             resolve_level_2({error, results})
                         } else {
+                            disconnect()
                             resolve_level_2({error, results})
                         } 
                     })

@@ -98,7 +98,7 @@ It works like sequelize but at the behide works as normal mysql lib.
 Clean all data from a table
 
 ```
-let basic_1 = await mysqlr.clean('test1')
+let basic_1 = await mysqlr.del('test1')
 ```
 
 Remove Specific data/item from table
@@ -108,7 +108,7 @@ Here peramitter are
 mysqlr.cleanByItem(table_name, colume name, item name)
 
 ```
-let basic_1 = await mysqlr.cleanByItem('test1', 't1', "Hello")
+let basic_1 = await mysqlr.delByItem('test1', 't1', "Hello")
 ```
 
 ## Sample Code 1

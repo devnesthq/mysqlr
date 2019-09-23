@@ -85,26 +85,26 @@ describe("Testing Spacific Item Delete", () => {
 })
 
 
-
+// ANCHOR Skip Test
 describe.skip("Testing data delete", () => {
 
     test('Delete Table 1', async () => {
-        let basic_1 = await mysqlr.clean('table_1')
+        let basic_1 = await mysqlr.del('table_1')
         expect(basic_1.error).toEqual(null);
     })
 
     test('Delete Table 2', async () => {
-        let basic_1 = await mysqlr.clean('table_2')
+        let basic_1 = await mysqlr.del('table_2')
         expect(basic_1.error).toEqual(null);
     })
 
     test('Delete Table 3', async () => {
-        let basic_1 = await mysqlr.clean('table_3')
+        let basic_1 = await mysqlr.del('table_3')
         expect(basic_1.error).toEqual(null);
     })
 
     test('Delete Table 4', async () => {
-        let basic_1 = await mysqlr.clean('table_4')
+        let basic_1 = await mysqlr.del('table_4')
         expect(basic_1.error).toEqual(null);
     })
 })
