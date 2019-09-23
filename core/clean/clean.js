@@ -1,12 +1,13 @@
 const cache = require('memory-cache');
 const init = require('../init/init')
 
+
+
+// NOTE Clean all data from table
 /**
  * 
  * @param {String} table_name Clean all the record.
  */
-
-// NOTE Clean all data from table
 exports.clean = (table_name) => {
     return new Promise((resolve, reject) => {
 
@@ -23,14 +24,13 @@ exports.clean = (table_name) => {
     })
 }
 
-
+// NOTE Clean Spacific item from the table colume
 /**
  * 
  * @param {String} table_name   Cleaning table name .
  * @param {String} col_name     Cleaning colums name.
  * @param {String} item_name    Cleaning item name.
  */
-// Clean Spacific item from the table colume
 exports.cleanByItem = (table_name, col_name, item_name) => {
     return new Promise((resolve, reject) => {
 
